@@ -25,7 +25,10 @@ const Index: React.FC = () => {
           <PolaroidGallery />
           <Footer />
         </div>
-        <VinylPlayer audioSrc="/coracao.webm" coverImg="/cover.jpeg" />
+        <VinylPlayer
+          audioSrc="https://imlusca.github.io/galeria/coracao.webm"
+          coverImg="https://imlusca.github.io/galeria/cover.jpeg"
+        />
       </main>
     </>
   );

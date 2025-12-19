@@ -98,7 +98,9 @@ const PolaroidGallery: React.FC = () => {
   useEffect(() => {
     const loadPolaroids = async () => {
       try {
-        const response = await fetch("/mapper.json");
+        const response = await fetch(
+          "https://imlusca.github.io/galeria/mapper.json"
+        );
         const data: PolaroidRawData[] = await response.json();
 
         const sizes: ("small" | "medium" | "large")[] = [
@@ -114,7 +116,7 @@ const PolaroidGallery: React.FC = () => {
 
         const enhancedData: Polaroid[] = data.map((item, index) => ({
           ...item,
-          file: `polaroid/${item.file}`,
+          file: `https://imlusca.github.io/galeria/polaroid/${item.file}`,
           rotation: (index % 2 === 0 ? 1 : -1) * (Math.random() * 4 + 1),
           size: sizes[index % 3],
           bgColor: bgColors[index % bgColors.length],
